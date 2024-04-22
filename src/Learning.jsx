@@ -22,6 +22,33 @@ High job opportunity
 
 //Jsx - means JavaScript Syntax extension. It is used to describe and Create HTML elements in JavaScript in a more declarative way.
 //JSX stands for JavaScript XML. JSX allows us to write HTML elements with JavaScript code.
+//To create HTML elements in React we do not use the createElement() instead we just use JSX elements.
+//Therefore, JSX makes it easier to write and add HTML elements in React.
+//JSX will be converted to JavaScript on browser using a transpiler - babel.js.
+//Babel is a library which transpiles JSX to pure JavaScript and latest JavaScript to older version.
+
+// JSX syntax
+// we don't need to use quotes with JSX
+
+const jsxElement = <h1>I am a JSX element</h1>;
+const welcome = <h1>Welcome to 30 Days of React Challenge</h1>;
+const data = <small>Oct 2, 2020</small>;
+
+//JSX can allow us to use HTML in JavaScript. The HTML element in the JSX above is h1 and small.
+//JSX Element
+
+//JSX has a JavaScript and HTML like syntax.
+//JSX element could be a single HTML element or many HTML elements wrapped in a parent HTML element.
+
+const Header = (
+  <header>
+    <h1>Welcome to 30 Days Of React</h1>
+    <h2>Getting Started React</h2>
+    <h3>JavaScript Library</h3>
+    <p>Promise Nwankwo</p>
+    <small>Oct 2, 2020</small>
+  </header>
+);
 
 /* Surprise! You probably thought you could just forget
 the line of code you just learned! Nope, not on my watch!
