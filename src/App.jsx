@@ -2,10 +2,8 @@ import React from "react";
 
 import "./App.css";
 
-function App() {
-  const welcome = "Welcome to 30 Days Of React";
-  const title = "Getting Started React";
-  const header = (
+const Header = () => {
+  return (
     <header>
       <div className="header-wrapper">
         <h1>Welcome to 30 Days Of React</h1>
@@ -16,9 +14,10 @@ function App() {
       </div>
     </header>
   );
+};
 
-  // JSX element, main
-  const main = (
+const Main = () => {
+  return (
     <main>
       <div className="main-wrapper">
         <p>
@@ -36,21 +35,28 @@ function App() {
       </div>
     </main>
   );
+};
 
-  // JSX element, footer
-  const footer = (
+const Footer = () => {
+  return (
     <footer>
       <div className="footer-wrapper">
         <p>Copyright 2020</p>
       </div>
     </footer>
   );
+};
+
+function App() {
+  // JSX element, main
+
+  // JSX element, footer
 
   return (
     <>
-      {header}
-      {main}
-      {footer}
+      <Header />
+      <Main />
+      <Footer />
     </>
   );
 }
