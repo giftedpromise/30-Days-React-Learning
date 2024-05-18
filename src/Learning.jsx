@@ -6,7 +6,7 @@
 //React is used to build single-page applications.
 
 //React allows us to create reusable UI components.
-//React allows u sto write composable code
+//React allows us to write composable code
 //React is declarative and not imperative
 
 /* Why we choose to use React ? We use it because of the following reasons:
@@ -49,7 +49,135 @@ const Header = (
     <small>Oct 2, 2020</small>
   </header>
 );
+// JSX must be wrapped by an outer parent element.
+//Without the header HTML element or other parent HTML element the above JSX is invalid.
 
+//Commenting a JSX element
+//We comment codes for different reasons and it is also good to know how to comment out JSX elements in React.
+
+{
+  /*
+ <header>
+    <h1>Welcome to 30 Days Of React</h1>
+    <h2>Getting Started React</h2>
+    <h3>JavaScript Library</h3>
+    <p>Asabeneh Yetayeh</p>
+    <small>Oct 2, 2020</small>
+  </header>
+
+*/
+}
+
+//Injecting data to a JSX Element
+//So far, we used static data on the JSX elements, but we can also pass different data types as a dynamic data.
+//The dynamic data could be string, number, boolean, array or object.
+//Let us see each of the data types step by step. To inject data to a JSX we use the {} bracket.
+
+const welcome1 = "Welcome to 30 Days Of React";
+const title = "Getting Started React";
+const subtitle = "JavaScript Library";
+const authorFirstName = "Promise";
+const authorLastName = "Nwankwo";
+const date = "Oct 1, 2020";
+
+// JSX element, header
+const header = (
+  <header>
+    <div className="header-wrapper">
+      <h1>{welcome1}</h1>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>
+        Instructor: {authorFirstName} {authorLastName}
+      </p>
+      <small>Date: {date}</small>
+    </div>
+  </header>
+);
+
+//Injecting numbers
+
+const numOne = 3;
+const numTwo = 5;
+
+const result = (
+  <p>
+    {numOne} + {numTwo} = {numOne + numTwo}
+  </p>
+);
+
+const yearBorn = 1992;
+const currentYear = new Date().getFullYear();
+const age = currentYear - yearBorn;
+
+const personAge = <p>{age}</p>;
+
+//Injecting an array to a JSX Element
+const techs = ["HTML", "CSS", "JavaScript"];
+
+// JSX element, main
+const main = (
+  <main>
+    <div className="main-wrapper">
+      <p>
+        Prerequisite to get started{" "}
+        <strong>
+          <em>react.js</em>
+        </strong>
+        :
+      </p>
+      <ul>{techs}</ul>
+    </div>
+  </main>
+);
+
+//Injecting an object to a JSX Element
+//We can inject string, number, boolean, array data to JSX but we cannot directly inject an object.
+//We should extract object values first or destructure the content of the object before we inject the data to the JSX element.
+const author = {
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
+};
+
+const objInject = (
+  <p>
+    instuctor's name: {author.firstName} {author.lastName}
+  </p>
+);
+
+//e can modify the array using map.
+
+const courses = ["Html", "Css", "JavaScript"];
+const formattedCourses = courses.map((course) => <li>{course}</li>);
+
+/* Write a JSX element which displays your full name, country, title, gender, email, phone number.
+ Use h1 for the name and p for the rest of the information and store it in a user variable
+
+ */
+
+const user = (
+  <div>
+    <h1>Promise Nwankwo</h1>
+    <p>Nigeria</p>
+    <p>Software Developer</p>
+    <p>Female</p>
+    <p>giftedpromise1992@gmail.com</p>
+    <p>08062537697</p>
+  </div>
+);
+//Write a footer JSX element
+const footer = (
+  <footer>
+    <p>Copyright 2020</p>
+  </footer>
+);
+
+const mainStyle = {
+  padding: "20px",
+  margin: "20px",
+  fontSize: "16px",
+  backgroundColor: "#f0f0f0", // Light gray background
+};
 /* Surprise! You probably thought you could just forget
 the line of code you just learned! Nope, not on my watch!
 
@@ -117,8 +245,34 @@ root.render(navbar)
 
 //TOPIC COVERED: Components, functional and class components
 /* 
-
+A React component is a small, reusable code, which is responsible for one part of the application UI.
+ A React application is an aggregation of components. 
+React can help us to build reusable components. 
 In React, a component is a piece of the user interface (UI) that you can reuse and manage independently. 
 Components can be simple or complex, depending on what you want them to do. 
 They are like building blocks that make up the whole application.
-*/
+We use JavaScript functions or classes to make components.
+ If we use a function, the component will be a functional component, 
+ but if we use a class, the component will be a class-based component.
+
+Components can be:
+
+Functional Component / Presentational Component / Stateless Component / Dumb Component
+Class Component / Container Component/ Statefull Component / Smart Component
+
+Class Components:
+
+Class components are like factories.
+ You define a blueprint (class) and create instances (objects) from it.
+They have their own internal state and lifecycle methods.
+Like a smart robot, they can do more complex tasks and manage their own behavior.
+Used for components that need to maintain state or have lifecycle methods.
+ */
+
+class Greeting extends React.Component {
+  render() {
+    return <h1>Hello, React!</h1>;
+  }
+}
+
+ReactDOM.render(<Greeting />, document.getElementById("app"));
