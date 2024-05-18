@@ -330,3 +330,27 @@ const Header2 = () => (
     </div>
   </header>
 );
+
+//Injecting data to JSX in React Component
+const welcome2 = "Welcome to 30 Days Of React";
+const title1 = "Getting Started React";
+const subtitle2 = "JavaScript Library";
+const author = {
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
+};
+const date1 = "Oct 3, 2020";
+
+const Header4 = () => {
+  return (
+    <header>
+      <h1>{welcome2}</h1>
+      <h2>{title1}</h2>
+      <h3>{subtitle2}</h3>
+      <p>
+        Instructor: {author.firstName} {author.lastName}
+      </p>
+      <small>Date: {date}</small>
+    </header>
+  );
+};
