@@ -609,3 +609,24 @@ const App4 = () => {
     </div>
   );
 };
+
+//Boolean props type
+
+const status = (props) => {
+  let status = props.status ? "Old enough to drive" : "Too young for driving";
+  return <p>{status}</p>;
+};
+
+const App5 = () => {
+  let currentYear = 2020;
+  let birthYear = 2015;
+  const age = currentYear - birthYear; // 15 years
+
+  let status = age >= 18;
+
+  return (
+    <div className="app">
+      <Status status={status} />
+    </div>
+  );
+};
