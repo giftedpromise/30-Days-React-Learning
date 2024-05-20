@@ -148,7 +148,9 @@ const objInject = (
 //e can modify the array using map.
 
 const courses = ["Html", "Css", "JavaScript"];
-const formattedCourses = courses.map((course) => <li>{course}</li>);
+const formattedCourses = courses.map((course) => (
+  <li key={course}>{course}</li>
+));
 
 /* Write a JSX element which displays your full name, country, title, gender, email, phone number.
  Use h1 for the name and p for the rest of the information and store it in a user variable
@@ -335,7 +337,7 @@ const Header2 = () => (
 const welcome2 = "Welcome to 30 Days Of React";
 const title1 = "Getting Started React";
 const subtitle2 = "JavaScript Library";
-const author = {
+const author1 = {
   firstName: "Asabeneh",
   lastName: "Yetayeh",
 };
@@ -348,9 +350,96 @@ const Header4 = () => {
       <h2>{title1}</h2>
       <h3>{subtitle2}</h3>
       <p>
-        Instructor: {author.firstName} {author.lastName}
+        Instructor: {author1.firstName} {author1.lastName}
       </p>
       <small>Date: {date}</small>
     </header>
   );
 };
+
+const hexaColor = () => {
+  let str = "0123456789abcdef";
+  let color = "";
+  for (let i = 0; i < 6; i++) {
+    let index = Math.floor(Math.random() * str.length);
+    color += str[index];
+  }
+  return "#" + color;
+};
+
+const HexaColor = () => <div>{hexaColor()}</div>;
+
+//Rendering components
+// TechList Component
+const TechList = () => {
+  const techs = ["HTML", "CSS", "JavaScript"];
+  const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>);
+  return techsFormatted;
+};
+
+const Button = () => <button>action</button>;
+
+const buttonStyles = {
+  padding: "10px 20px",
+  background: "rgb(0, 255, 0",
+  border: "none",
+  borderRadius: 5,
+};
+const Button1 = () => <button style={buttonStyles}> action </button>;
+
+//DAY Three
+
+//TOPIC COVERED: Props
+/* Props is a special keyword in React that stands for properties
+ and is being used to pass data from one component to another and mostly from parent component 
+ to child component. We can say props is a data carrier or a means to transport data. 
+ React allows you to pass a data to component through a concept called props.
+ You can pass all kinds of value to your props(string, number, array, objects, functions)
+ Props (short for properties) are a way of passing data from a parent component to a child component in React. 
+ They allow components to be dynamic and reusable by enabling them to
+  receive data and behavior from their parent components.
+*/
+
+// function syntax
+
+const getUserInfo = (firstName, lastName, country) => {
+  return `${firstName} ${lastName}. Lives in ${country}.`;
+};
+
+// calling a functons
+
+getUserInfo("Asabeneh", "Yeteyeh", "Finland");
+
+const User = (props) => {
+  return (
+    <div>
+      <h1>
+        {props.firstName}
+        {props.lastName}
+        <small>{props.country}</small>
+      </h1>
+    </div>
+  );
+};
+
+// calling or instantiating a component, this component
+//has three properties and we call them props:firstName, lastName, country
+//Also, props should be separated by a space, not a comma.
+<User firstName="Asabeneh" lastName="Yetayeh" country="Finland" />;
+
+/* 
+What is props in a React component?
+Props (short for properties) are a way of passing data from a parent component to a child component in React. They allow components to be dynamic and reusable by enabling them to receive data and behavior from their parent components.
+
+How do you access props in a React component?
+Props are accessed within a component via the props object. 
+In functional components, props are passed as a parameter to the function. 
+In class components, props are available as this.props.
+*/
+
+const Greeting = (props) => {
+  return <h1>Hello, {props.name}!</h1>;
+};
+
+// Usage
+<Greeting name="John" />;
