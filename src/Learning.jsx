@@ -437,9 +437,117 @@ In functional components, props are passed as a parameter to the function.
 In class components, props are available as this.props.
 */
 
+//Functional Component Example:
 const Greeting = (props) => {
   return <h1>Hello, {props.name}!</h1>;
 };
 
 // Usage
 <Greeting name="John" />;
+
+//Class Component Example:
+class Greeting extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}!</h1>;
+  }
+}
+
+// Usage
+<Greeting name="John" />;
+
+//What data types can we pass as props to components?
+//You can pass any JavaScript data type as props to components, including:
+
+Strings: <Component name="John" />;
+Numbers: <Component age={30} />;
+Booleans: <Component isActive={true} />;
+Arrays: <Component items={[1, 2, 3]} />;
+Objects: <Component user={{ name: "John", age: 30 }} />;
+Functions: <Component handleClick={this.handleClick} />;
+Elements: <Component header={<h1>Title</h1>} />;
+Components: <Component child={<ChildComponent />} />;
+
+/* What is propTypes?
+propTypes is a feature in React used for type checking the props passed to a component. 
+It helps catch bugs by ensuring that components receive the correct type of props. 
+You define propTypes by using the prop-types library.
+*/
+
+import PropTypes from "prop-types";
+
+const Greeting1 = (props) => {
+  return <h1>Hello, {props.name}!</h1>;
+};
+
+Greeting1.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
+// Usage
+<Greeting1 name="John" />;
+
+/*
+What is a default prop?
+Default props are used to define default values for props in case they are not provided by the parent component.
+ This ensures that the component still behaves as expected even if some props are missing.
+*/
+
+const Greeting2 = (props) => {
+  return <h1>Hello, {props.name}!</h1>;
+};
+
+Greeting2.defaultProps = {
+  name: "Guest",
+};
+
+// Usage without providing a name prop
+<Greeting2 />;
+// Output: Hello, Guest!
+
+//Props object
+//React props is an object which you get instantly when you create a React component.
+
+// Header Component
+const Header5 = (props) => {
+  return (
+    <header>
+      <div className="header-wrapper">
+        <h1>{props.welcome}</h1>
+      </div>
+    </header>
+  );
+};
+
+// The App, or the parent or the container component
+// Functional Component
+const App1 = () => {
+  return (
+    <div className="app">
+      <Header5 welcome="Welcome to 30 Days Of React" />
+    </div>
+  );
+};
+
+//A component can have one or many props.
+//Props could be different data types.
+// It could be a string, number, boolean, array, object or a function.
+
+//Different data type props
+//String props type
+//The data type of the props we pass an attribute to the component is a string.
+
+const Header6 = (props) => {
+  return (
+    <header>
+      <div className="header-wrapper">
+        <h1>{props.welcome}</h1>
+        <h2>{props.title}</h2>
+        <h3>{props.subtitle}</h3>
+        <p>
+          {props.firstName} {props.lastName}
+        </p>
+        <small>{props.date}</small>
+      </div>
+    </header>
+  );
+};
