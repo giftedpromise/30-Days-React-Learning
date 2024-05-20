@@ -551,3 +551,18 @@ const Header6 = (props) => {
     </header>
   );
 };
+
+// The App, or the parent or the container component
+// Functional Component
+const App2 = () => (
+  <div className="app">
+    <Header
+      welcome="Welcome to 30 Days Of React"
+      title="Getting Started React"
+      subtitle="JavaScript Library"
+      firstName="Asabeneh"
+      lastName="Yetayeh"
+      date="Oct 4, 2020"
+    />
+  </div>
+);
