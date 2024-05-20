@@ -566,3 +566,25 @@ const App2 = () => (
     />
   </div>
 );
+
+//Using variable as props
+
+const User1 = (props) => {
+  return (
+    <div className="wrapper">
+      <h1>{props.welcome}</h1>
+      <h2>{props.name}</h2>
+      <p>{props.title}</p>
+      <p>{props.age}</p>
+    </div>
+  );
+};
+
+const App3 = () => {
+  const name = "Promise Nwankwo";
+  const welcome = "Welcome to 30 Days Of React";
+  const title = "Getting Started React";
+  const age = 32;
+
+  return <User1 name={name} welcome={welcome} title={title} age={age} />;
+};
