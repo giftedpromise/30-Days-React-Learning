@@ -727,3 +727,18 @@ const App10 = () => {
     </div>
   );
 };
+
+//Destructuring props
+
+const UserProfile = ({ name, age, location }) => {
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>Age: {age}</p>
+      <p>Location: {location}</p>
+    </div>
+  );
+};
+
+// Usage
+<UserProfile name="John Doe" age={30} location="New York" />;
