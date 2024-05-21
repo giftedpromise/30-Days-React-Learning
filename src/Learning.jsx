@@ -429,7 +429,9 @@ const User = (props) => {
 
 /* 
 What is props in a React component?
-Props (short for properties) are a way of passing data from a parent component to a child component in React. They allow components to be dynamic and reusable by enabling them to receive data and behavior from their parent components.
+Props (short for properties) are a way of passing data from a parent component to a child component in React.
+ They allow components to be dynamic and reusable by enabling them to 
+ receive data and behavior from their parent components.
 
 How do you access props in a React component?
 Props are accessed within a component via the props object. 
@@ -742,3 +744,28 @@ const UserProfile = ({ name, age, location }) => {
 
 // Usage
 <UserProfile name="John Doe" age={30} location="New York" />;
+
+//Day four
+//Mapping arrays
+//An array is the most frequently used data structure to handle many kinds of problems.
+//In React, we use map to modify an array to list of JSX by adding a certain HTML
+//elements to each element of an array.
+
+const numbers = ({ numbers }) => {
+  const lists = numbers.map((number) => <li>{number}</li>);
+};
+
+const App11 = () => {
+  const numbers = [1, 2, 3, 4, 5];
+
+  return (
+    <div className="container">
+      <div>
+        <h1>Numbers List</h1>
+        <ul>
+          <Numbers numbers={numbers} />
+        </ul>
+      </div>
+    </div>
+  );
+};
