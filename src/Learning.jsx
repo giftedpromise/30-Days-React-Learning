@@ -656,3 +656,53 @@ const App7 = () => (
     <Skills skills={["HTML", "CSS", "JavaScript"]} />
   </div>
 );
+
+//object Prop types
+
+const Header7 = (props) => {
+  return (
+    <header>
+      <div className="header-wrapper">
+        <h1>{props.data.welcome}</h1>
+        <h2>{props.data.title}</h2>
+        <h3>{props.data.subtitle}</h3>
+      </div>
+    </header>
+  );
+};
+
+// The App, or the parent or the container component
+// Functional Component
+const App8 = () => {
+  const data = {
+    welcome: "Welcome to 30 Days Of React",
+    title: "Getting Started React",
+    subtitle: "JavaScript Library",
+  };
+
+  return (
+    <div className="app">
+      <Header data={data} />
+    </div>
+  );
+};
+
+//Function prop types
+
+const Button2 = (props) => (
+  <button onClick={props.onClick}>{props.text}</button>
+);
+
+// The App, or the parent or the container component
+// Functional Component
+const App = () => {
+  const sayHi = () => {
+    alert("Hi");
+  };
+
+  return (
+    <div className="app">
+      <Button text="Say Hi" onClick={sayHi} />
+    </div>
+  );
+};
