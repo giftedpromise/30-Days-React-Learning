@@ -630,3 +630,29 @@ const App5 = () => {
     </div>
   );
 };
+
+//Array props type
+//In programming arrays and objects are the most frequently used data structure
+//to solve different problems and store data in a more structured way.
+
+const Skills = (props) => <ul>{props.skills}</ul>;
+
+const App6 = () => (
+  <div className="app">
+    <Skills skills={["HTML", "CSS", "JavaScript"]} />
+  </div>
+);
+
+//Modifying
+
+const Skills2 = (props) => {
+  // modifying the skills array
+  const skillList = props.skills.map((skill) => <li>{skill}</li>);
+  return <ul>{skillList}</ul>;
+};
+
+const App7 = () => (
+  <div className="app">
+    <Skills skills={["HTML", "CSS", "JavaScript"]} />
+  </div>
+);
