@@ -753,6 +753,7 @@ const UserProfile = ({ name, age, location }) => {
 
 const numbers = ({ numbers }) => {
   const lists = numbers.map((number) => <li>{number}</li>);
+  return lists;
 };
 
 const App11 = () => {
@@ -769,3 +770,69 @@ const App11 = () => {
     </div>
   );
 };
+
+//Mapping array of arrays
+
+const skills = [
+  ["HTML", 10],
+  ["CSS", 7],
+  ["JavaScript", 9],
+  ["React", 8],
+];
+
+const skill = ({ skills: [Tech, level] }) => (
+  <li>
+    {tech} {level}
+  </li>
+);
+
+// Skills Component
+const Skills1 = ({ skills }) => {
+  const skillsList = skills.map((skill) => <Skill skill={skill} />);
+  console.log(skillsList);
+  return <ul>{skillsList}</ul>;
+};
+
+const App12 = () => {
+  return (
+    <div className="container">
+      <div>
+        <h1>Skills Level</h1>
+        <Skills1 skills={skills} />
+      </div>
+    </div>
+  );
+};
+
+const countries = [
+  { name: "Finland", city: "Helsinki" },
+  { name: "Sweden", city: "Stockholm" },
+  { name: "Denmark", city: "Copenhagen" },
+  { name: "Norway", city: "Oslo" },
+  { name: "Iceland", city: "Reykjavík" },
+];
+
+// Country component
+const Country = ({ country: { name, city } }) => {
+  return (
+    <div>
+      <h1>{name}</h1>
+      <small>{city}</small>
+    </div>
+  );
+};
+
+// countries component
+const Countries = ({ countries }) => {
+  const countryList = countries.map((country) => <Country country={country} />);
+  return <div>{countryList}</div>;
+};
+// App component
+const App13 = () => (
+  <div className="container">
+    <div>
+      <h1>Countries List</h1>
+      <Countries countries={countries} />
+    </div>
+  </div>
+);
