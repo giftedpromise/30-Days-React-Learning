@@ -695,7 +695,7 @@ const Button2 = (props) => (
 
 // The App, or the parent or the container component
 // Functional Component
-const App = () => {
+const App9 = () => {
   const sayHi = () => {
     alert("Hi");
   };
@@ -703,6 +703,27 @@ const App = () => {
   return (
     <div className="app">
       <Button text="Say Hi" onClick={sayHi} />
+    </div>
+  );
+};
+
+//Example 2
+
+const Button3 = (props) => (
+  <button onClick={props.onClick}>{props.text}</button>
+);
+
+// The App, or the parent or the container component
+// Functional Component
+const App10 = () => {
+  const greetPeople = () => {
+    alert("Welcome to 30 Days Of React Challenge, 2020");
+  };
+
+  return (
+    <div className="app">
+      <Button text="Greet People" onClick={greetPeople} />
+      <Button text="Show Time" onClick={() => alert(new Date())} />
     </div>
   );
 };
