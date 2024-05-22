@@ -746,7 +746,7 @@ const UserProfile = ({ name, age, location }) => {
 <UserProfile name="John Doe" age={30} location="New York" />;
 
 //Day four
-//Mapping arrays
+//TOPIC COVERED: Mapping arrays
 //An array is the most frequently used data structure to handle many kinds of problems.
 //In React, we use map to modify an array to list of JSX by adding a certain HTML
 //elements to each element of an array.
@@ -836,3 +836,69 @@ const App13 = () => (
     </div>
   </div>
 );
+
+//Key in mapping arrays
+//Keys help React to identify items which have changed, added, or removed.
+// Keys should be given to the elements inside the array to give the elements a stable identity.
+//The key should be unique. Mostly data will come with as an id and we can use id as key.
+// If we do not pass key to React during mapping it raises a warning on the browser.
+// If the data does not have an id we have to find a way to
+// create a unique identifier for each element when we map it.
+
+const Numbers3 = ({ numbers }) => {
+  // modifying array to array of li JSX
+  const list = numbers.map((num) => <li key={num}>{num}</li>);
+  return list;
+};
+
+const App14 = () => {
+  const numbers = [1, 2, 3, 4, 5];
+
+  return (
+    <div className="container">
+      <div>
+        <h1>Numbers List</h1>
+        <ul>
+          <Numbers numbers={numbers} />
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+//DAY FIVE(5)
+
+//TOPIC COVERED: States
+
+/* What is State?
+State is an object that holds information that may change over the lifetime of a component.
+Unlike props, which are read-only and passed down from parent components,
+ state is managed within the component itself.
+When state changes, React re-renders the component to reflect the new state.
+
+Using State in Class Components
+In class components, state is initialized in the constructor and managed using this.state and this.setState.
+*/
+
+//Initializing State
+//State is typically initialized in the constructor:
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+      text: "Hello",
+    };
+  }
+  // other methods...
+}
+
+//Updating State
+//State is updated using this.setState, which schedules an update to the component’s state
+//and tells React to re-render it:
+incrementCount = () => {
+  this.setState((prevState) => ({
+    count: prevState.count + 1,
+  }));
+};
