@@ -1015,3 +1015,15 @@ const App18 = () => {
     return <h1>Please log in.</h1>;
   }
 };
+
+//2. Using Ternary Operator
+//The ternary operator is a more concise way to handle simple conditional rendering.
+//It is often used directly within JSX. Ideal for simple, inline conditions.
+
+const App19 = () => {
+  const isLoggedIn = true;
+
+  return (
+    <div>{isLoggedIn ? <h1>Welcome back!</h1> : <h1>Please log in.</h1>} </div>
+  );
+};
