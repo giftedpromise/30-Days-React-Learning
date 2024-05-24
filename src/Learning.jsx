@@ -971,3 +971,34 @@ const app16 = () => {
     </ul>
   );
 };
+
+//Rendering Components in Lists
+const User2 = ({ user }) => <li>{user.name}</li>;
+
+const App17 = () => {
+  const users = [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" },
+  ];
+
+  return (
+    <ul>
+      {users.map((user) => (
+        <User2 key={user.id} user={user} />
+      ))}
+    </ul>
+  );
+};
+
+//DAY SEVEN
+//TOPIC COVERERD: Conditional rendering
+{
+  /*
+Conditional rendering in React allows you to dynamically display components or elements based on certain conditions.
+ React makes it easy to implement conditional rendering using JavaScript's control structures 
+ like if-else statements, ternary operators, and logical && operators. 
+Below are different ways to achieve conditional rendering in React:
+
+*/
+}
