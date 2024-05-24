@@ -1071,3 +1071,15 @@ const App21 = () => {
     </div>
   );
 };
+
+//Conditional Rendering with Components
+//You can also create separate components and render them conditionally.
+//This helps keep your code clean and organized.
+
+const LoggedIn = () => <h1>Welcome back!</h1>;
+const LoggedOut = () => <h1>Please log in.</h1>;
+
+const App22 = () => {
+  const isLoggedIn = true;
+  return <div>{isLoggedIn ? <LoggedIn /> : <LoggedOut />}</div>;
+};
