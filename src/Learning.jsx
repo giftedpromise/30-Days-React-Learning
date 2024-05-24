@@ -1030,3 +1030,44 @@ const App19 = () => {
 
 //3.Using Logical && Operator
 //For cases where you only want to render something when a condition is true, you can use the logical && operator.
+
+const App20 = () => {
+  const hasNotifications = true;
+
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      {hasNotifications && <p>You have new notifications!</p>}
+    </div>
+  );
+};
+
+//4. Using switch Statement
+//For multiple conditions, you might find it cleaner to use a switch statement.
+//This is particularly useful when you have multiple possible renderings.
+
+const App21 = () => {
+  const status = "error";
+
+  let content;
+  switch (status) {
+    case "loading":
+      content = <p>Loading...</p>;
+      break;
+    case "success":
+      content = <p>Data loaded successfully!</p>;
+      break;
+    case "error":
+      content = <p>Error loading data.</p>;
+      break;
+    default:
+      content = <p>Unknown status.</p>;
+  }
+
+  return (
+    <div>
+      <h1>Data Fetching</h1>
+      {content}
+    </div>
+  );
+};
