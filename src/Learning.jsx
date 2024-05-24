@@ -1027,3 +1027,6 @@ const App19 = () => {
     <div>{isLoggedIn ? <h1>Welcome back!</h1> : <h1>Please log in.</h1>} </div>
   );
 };
+
+//3.Using Logical && Operator
+//For cases where you only want to render something when a condition is true, you can use the logical && operator.
