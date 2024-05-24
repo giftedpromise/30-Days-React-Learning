@@ -1002,3 +1002,16 @@ Below are different ways to achieve conditional rendering in React:
 
 */
 }
+//1. Using if-else Statements
+//You can use if-else statements to conditionally render elements in React.
+//Use for more complex logic outside of JSX.
+
+const App18 = () => {
+  const isLoggedIn = true;
+
+  if (isLoggedIn == true) {
+    return <h1>Welcome back!</h1>;
+  } else {
+    return <h1>Please log in.</h1>;
+  }
+};
