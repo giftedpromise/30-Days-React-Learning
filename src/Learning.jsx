@@ -1083,6 +1083,3 @@ const App22 = () => {
   const isLoggedIn = true;
   return <div>{isLoggedIn ? <LoggedIn /> : <LoggedOut />}</div>;
 };
-
-//Inline Conditional Rendering with Functions
-//For more complex logic, you can use a function to handle conditional rendering.
