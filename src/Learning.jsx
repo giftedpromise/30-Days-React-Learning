@@ -1120,3 +1120,17 @@ the browser's native events, including stopPropagation() and preventDefault() me
 
 */
 }
+
+import React from "react";
+
+const App = () => {
+  const handleClick = () => {
+    alert("Button was clicked!");
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>Click Me</button>
+    </div>
+  );
+};
