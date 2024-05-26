@@ -1121,9 +1121,7 @@ the browser's native events, including stopPropagation() and preventDefault() me
 */
 }
 
-import React from "react";
-
-const App = () => {
+const App24 = () => {
   const handleClick = () => {
     alert("Button was clicked!");
   };
@@ -1131,6 +1129,23 @@ const App = () => {
   return (
     <div>
       <button onClick={handleClick}>Click Me</button>
+    </div>
+  );
+};
+
+//Passing Arguments to Event Handlers
+//You can pass additional arguments to your event handler by wrapping the handler in an anonymous function.
+
+const App25 = () => {
+  const handleClick = (message) => {
+    alert(message);
+  };
+
+  return (
+    <div>
+      <button onClick={() => handleClick("Button was clicked!")}>
+        Click Me
+      </button>
     </div>
   );
 };
