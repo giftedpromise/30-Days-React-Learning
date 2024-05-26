@@ -1149,3 +1149,40 @@ const App25 = () => {
     </div>
   );
 };
+
+//Synthetic Events
+//React's SyntheticEvent is a cross-browser wrapper around the browser's native event. S
+//ynthetic events have the same interface as native events, but they work identically across all browsers.
+
+const App26 = () => {
+  const handleClick = (event) => {
+    console.log(event); // SyntheticEvent
+    console.log(event.nativeEvent); // Native browser event
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>Click Me</button>
+    </div>
+  );
+};
+
+//Event Pooling
+//a22React pools events for performance reasons, which means that the properties of the event object will be nullified after the event callback has been invoked.
+// If you need to access the event properties asynchronously, you should call event.persist().
+import React from "react";
+
+const App27 = () => {
+  const handleClick = (event) => {
+    event.persist();
+    setTimeout(() => {
+      console.log(event.type); // "click"
+    }, 1000);
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>Click Me</button>
+    </div>
+  );
+};
