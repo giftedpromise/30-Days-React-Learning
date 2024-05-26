@@ -1103,20 +1103,3 @@ const App23 = () => {
 };
 
 export default App;
-
-//DAY EIGHT
-//TOPIC COVERERD: HANDLING EVENTS
-{
-  /*
-Event handling in React is a key part of creating interactive web applications. 
-React provides a way to handle events that is similar to handling events in 
-plain JavaScript, but with some syntactic differences and added features.
-Key Points for Event Handling in React
-Event names: Events in React are named using camelCase, rather than lowercase.
-Event handlers: You pass a function as the event handler rather than a string.
-Synthetic events: React uses a cross-browser wrapper around the browser's 
-native event system called SyntheticEvent, which has the same interface as 
-the browser's native events, including stopPropagation() and preventDefault() methods.
-
-*/
-}
