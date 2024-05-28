@@ -1221,4 +1221,89 @@ function App28() {
 }
 
 //Step-by-Step Explanation:
-//1. Declare a State Variable:
+//1. Declare a State Variable.
+//2. Create an Event Handler.
+//3. Bind the Input Field's Value to the State Variable:
+// 4. Display the State Variable:
+
+//Getting multiple input data from form
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+
+function App() {
+  // Step 1: Declare state variables using useState
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    country: "",
+    title: "",
+  });
+
+  // Step 2: Create an event handler to update the state
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Step 3: Create an event handler to handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    // Here you can connect to a backend API to send the data to the database
+  };
+
+  // Step 4: Destructure form data from state for easy access
+  const { firstName, lastName, country, title } = formData;
+
+  return (
+    <div className="App">
+      <h3>Add Student</h3>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <input
+            type="text"
+            name="firstName"
+            placeholder="First Name"
+            value={firstName}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            name="country"
+            placeholder="Country"
+            value={country}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={title}
+            onChange={handleChange}
+          />
+        </div>
+
+        <button className="btn btn-success">Submit</button>
+      </form>
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
