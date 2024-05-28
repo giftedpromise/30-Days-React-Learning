@@ -1186,3 +1186,39 @@ const App27 = () => {
     </div>
   );
 };
+
+//DAY NINE
+//TOPIC COVERED: FORMS
+
+//Form is used to collect data from a user.
+//Getting data from an input field
+function App28() {
+  // Step 1: Declare a state variable
+  const [firstName, setFirstName] = useState("");
+
+  // Step 2: Create an event handler to update the state
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setFirstName(value);
+  };
+
+  return (
+    <div className="App">
+      {/* Step 3: Bind the input field's value to the state variable */}
+      <label htmlFor="firstName">First Name: </label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        placeholder="First Name"
+        value={firstName}
+        onChange={handleChange}
+      />
+      {/* Step 4: Display the state variable */}
+      <h1>{firstName}</h1>
+    </div>
+  );
+}
+
+//Step-by-Step Explanation:
+//1. Declare a State Variable:
