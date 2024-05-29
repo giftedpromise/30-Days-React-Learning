@@ -866,67 +866,7 @@ const App14 = () => {
   );
 };
 
-//DAY FIVE(5)
-
-//TOPIC COVERED: States
-
-/* What is State?
-State is an object that holds information that may change over the lifetime of a component.
-Unlike props, which are read-only and passed down from parent components,
- state is managed within the component itself.
- State is an object in react which let the component re-render when state data changes.
-When state changes, React re-renders the component to reflect the new state.
-
-Using State in Class Components
-In class components, state is initialized in the constructor and managed using this.state and this.setState.
-*/
-
-//Initializing State
-//State is typically initialized in the constructor:
-
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-      text: "Hello",
-    };
-  }
-  // other methods...
-}
-
-//Updating State
-//State is updated using this.setState, which schedules an update to the component’s state
-//and tells React to re-render it:
-incrementCount = () => {
-  this.setState((prevState) => ({
-    count: prevState.count + 1,
-  }));
-};
-
-//Using State in Functional Components
-//With the introduction of Hooks in React 16.8, functional components can now use state.
-
-//Initializing State with useState Hook
-//The useState Hook allows you to add state to functional components:
-
-//import React, { useState } from "react";
-
-function MyComponent() {
-  const [count, setCount] = useState(0);
-  const [text, setText] = useState("Hello");
-
-  // other code...
-
-  return (
-    <div>
-      <p>{count}</p>
-      <p>{text}</p>
-    </div>
-  );
-}
-
-//DAY SIX
+//DAY FIVE
 //TOPIC COVERERD: List rendering
 
 {
@@ -991,7 +931,7 @@ const App17 = () => {
   );
 };
 
-//DAY SEVEN
+//DAY SIX
 //TOPIC COVERERD: Conditional rendering
 {
   /*
@@ -1104,7 +1044,7 @@ const App23 = () => {
 
 export default App;
 
-//DAY EIGHT
+//DAY SEVEN
 //TOPIC COVERERD: HANDLING EVENTS
 {
   /*
@@ -1187,7 +1127,7 @@ const App27 = () => {
   );
 };
 
-//DAY NINE
+//DAY EIGHT
 //TOPIC COVERED: FORMS
 
 //Form is used to collect data from a user.
@@ -1307,3 +1247,119 @@ function App() {
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
+{
+  /*
+
+What is validation?
+The action or process of checking or proving the validity or accuracy of something in this case data.
+
+Form validation is the process of ensuring that user input in a form meets certain criteria 
+before the form is submitted.
+ It helps in maintaining data integrity and providing a good user experience. 
+
+What is the purpose of validation
+The main purpose to validation is to get a desired data from users.
+ In addition, to prevent malicious users and data.
+
+Validation Types
+Validation can be done in client side or sever side. At the moment, 
+we are using React which is a front end technology and we use client side validation.
+A validation can implement using HTML5 built-in validation or using JavaScript(using regular expression).
+
+
+Types of Form Validation
+Client-side Validation: This validation happens in the browser before the form is submitted to the server.
+ It provides immediate feedback to users without needing a server request.
+Server-side Validation: This validation happens on the server after the form data is submitted. 
+It is essential for security as client-side validation can be bypassed.
+
+*/
+}
+
+//DAY NINE(9)
+
+//TOPIC COVERED: States
+
+/* What is State?
+State is an object that holds information that may change over the lifetime of a component.
+Unlike props, which are read-only and passed down from parent components,
+ state is managed within the component itself.
+ State is an object in react which let the component re-render when state data changes.
+When state changes, React re-renders the component to reflect the new state.
+
+Using State in Class Components
+In class components, state is initialized in the constructor and managed using this.state and this.setState.
+*/
+
+//Initializing State
+//State is typically initialized in the constructor:
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+      text: "Hello",
+    };
+  }
+  // other methods...
+}
+
+//Updating State
+//State is updated using this.setState, which schedules an update to the component’s state
+//and tells React to re-render it:
+incrementCount = () => {
+  this.setState((prevState) => ({
+    count: prevState.count + 1,
+  }));
+};
+
+//Using State in Functional Components
+//With the introduction of Hooks in React 16.8, functional components can now use state.
+
+//Initializing State with useState Hook
+//The useState Hook allows you to add state to functional components:
+
+//import React, { useState } from "react";
+
+function MyComponent() {
+  const [count, setCount] = useState(0);
+  const [text, setText] = useState("Hello");
+
+  // other code...
+
+  return (
+    <div>
+      <p>{count}</p>
+      <p>{text}</p>
+    </div>
+  );
+}
+{
+  /* 
+
+The useState Hook provides those two things:
+
+1. A state variable to retain the data between renders.
+2. A state setter function to update the variable and trigger React to render the component again.
+
+
+Adding a state variable 
+To add a state variable, import useState from React at the top of the file:
+
+import { useState } from 'react';
+
+const [state, setState] = useState(0);
+state is a state variable and setState is the setter function.
+
+The [ and ] syntax here is called array destructuring and it lets you read values from an array.
+ The array returned by useState always has exactly two items.
+
+ Note:
+ Hooks—functions starting with use—can only be called at the top level of your components or your own Hooks. 
+ You can’t call Hooks inside conditions, loops, or other nested functions.
+ 
+ Anatomy of useState 
+When you call useState, you are telling React that you want this component to remember something:
+*/
+}
