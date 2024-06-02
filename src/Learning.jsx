@@ -1343,9 +1343,15 @@ The useState Hook provides those two things:
 1. A state variable to retain the data between renders.
 2. A state setter function to update the variable and trigger React to render the component again.
 
+when to use state
+Use a state variable when a component needs to “remember” some information between renders.
 
 Adding a state variable 
 To add a state variable, import useState from React at the top of the file:
+
+State variables are declared by calling the useState Hook.
+
+The useState Hook returns a pair of values: the current state and the function to update it.
 
 import { useState } from 'react';
 
@@ -1361,5 +1367,62 @@ The [ and ] syntax here is called array destructuring and it lets you read value
  
  Anatomy of useState 
 When you call useState, you are telling React that you want this component to remember something:
+
+State is isolated and private 
+State is local to a component instance on the screen. In other words, if you render the same component twice, 
+each copy will have completely isolated state! Changing one of them will not affect the other.
 */
 }
+
+//DAY 10
+
+//I built a travel list app
+
+//DAY 11
+
+//TOPIC COVERED: STATE MANAGEMENT
+//THINKING IN REACT: STATE MANAGEMENT
+
+/* 
+THINKING IN REACT
+
+� “React Mindset”
+� Thinking about components,
+state, data flow, effects, etc.
+� Thinking in state transitions, not
+element mutations
+
+“THINKING IN REACT” AS A PROCESS
+
+Break the desired UI into components and
+establish the component tree
+1
+THE “THINKING IN REACT” PROCESS:
+2 Build a static version in React (without state)
+� When to use state
+� Types of state: local vs. global
+� Where to place each piece of state
+3 Think about state:
+4 Establish data flow:
+� One-way data flow
+� Child-to-parent communication
+� Accessing global state
+
+
+WHEN YOU KNOW HOW TO “THINK IN
+REACT”, YOU WILL BE ABLE TO ANSWER:
+
+� How to break up a UI design into components?
+� How to make some components reusable?
+� How to assemble UI from reusable components?
+� What pieces of state do I need for interactivity?
+� Where to place state? (What component should
+"own" each piece of state?)
+� What types of state can or should I use?
+� How to make data flow through app?
+
+WHAT IS STATE MANAGEMENT?
+State management: Deciding when to create pieces of
+state, what types of state are necessary, where to place
+each piece of state, and how data flows through the app
+*/
