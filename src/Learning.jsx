@@ -1380,7 +1380,7 @@ each copy will have completely isolated state! Changing one of them will not aff
 
 //DAY 11
 
-//TOPIC COVERED: STATE MANAGEMENT
+//TOPIC COVERED: STATE MANAGEMENT(part one)
 //THINKING IN REACT: STATE MANAGEMENT
 
 /* 
@@ -1425,4 +1425,69 @@ WHAT IS STATE MANAGEMENT?
 State management: Deciding when to create pieces of
 state, what types of state are necessary, where to place
 each piece of state, and how data flows through the app
+
+TYPES OF STATE: LOCAL VS. GLOBAL STATE
+
+LOCAL STATE GLOBAL STATE
+
+� State needed only by one or few components
+� State that is defined in a component and only
+that component and child components have
+access to it (by passing via props)
+☝ We should always start with local state
+
+
+GLOBAL STATE
+
+� State needed only by one or few components
+� State that is defined in a component and only
+that component and child components have
+access to it (by passing via props)
+
+� State that many components might need
+� Shared state that is accessible to every
+component in the entire application
+In practice, we can manage global state using content API or external global state
+management library like Redux.
+
+
+SHARING STATE WITH SIBLING COMPONENT: Sharing state between sibling components in React involves lifting the state up to a common ancestor.
+ This common ancestor will manage the state and pass it down to the sibling components as props.
+
+ Child-to-parent communication (inverse data
+flow): Child-to-parent communication in React involves passing data or triggering actions from a child component to its parent. 
+This is typically achieved by passing a function from the parent component to the child component as a prop.
+The child component can then call this function, and the parent component can use the data or perform actions based on the information passed.
 */
+
+//DAY 12
+
+{
+  /* 
+Derived state: state that is computed from an existing piece of state or from props.
+
+*/
+}
+
+//DAY 13
+//TOPICS COVERED: CHILDREN PROPS
+//In React, "children" is a special prop that allows developers to pass components
+//or elements as data to other components.
+// This enables the creation of reusable and flexible components that can wrap or nest other components.
+
+{
+  /*
+Understanding "Children" Props
+Basic Concept:
+
+In React, any content placed between the opening and closing tags of a component is 
+passed to that component as props.children.
+This is a powerful feature because it allows components to be composed together in
+ a flexible and hierarchical manner.
+
+ How It Works:
+
+When you create a component, you can access props.children to render whatever is nested inside that component.
+props.children can be any valid React node: strings, numbers, elements, arrays, or fragments.
+*/
+}
