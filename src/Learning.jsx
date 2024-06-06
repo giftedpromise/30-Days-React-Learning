@@ -1491,3 +1491,27 @@ When you create a component, you can access props.children to render whatever is
 props.children can be any valid React node: strings, numbers, elements, arrays, or fragments.
 */
 }
+
+//Example
+
+// Define a Wrapper component
+const Wrapper = ({ children }) => {
+  return <div className="wrapper">{children}</div>;
+};
+
+// Use the Wrapper component
+const App = () => {
+  return (
+    <Wrapper>
+      <h1>Hello, World!</h1>
+      <p>This is a paragraph inside the wrapper.</p>
+    </Wrapper>
+  );
+};
+
+Wrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+//Prop Types and Children
+//To ensure that children props are used correctly, you can define prop types using the prop-types library.
+//This helps in validating the types of props.children that a component should receive.
