@@ -1526,3 +1526,160 @@ Flexibility: You can pass any renderable content as children, making your compon
 
 //DAY 14
 //TOPICS COVERED: Component Life Cycles
+
+{
+  /* 
+What is component life cycle
+Component life cycle is the process of mounting,
+ updating and destroying a component in a React application.
+ In React each component has three main phases:
+
+Mounting
+Updating
+Unmounting
+
+1. Mounting: The Robot is Built
+This is the stage when the component is first created and added to the webpage.
+
+componentDidMount: 
+It’s when the component has been put on the webpage, and it’s ready to go.
+
+Updating: The Robot Moves and Reacts
+This is when the component updates because of changes in data or user interactions. 
+Imagine your robot moving around and reacting to your commands.
+
+componentDidUpdate: This is like your robot responding to a new command,
+ like moving its arm because you pressed a button.
+
+ 3. Unmounting: The Robot is Turned Off
+This is the stage when the component is removed from the webpage.
+
+Modern React: Using Hooks
+In modern React, we often use something called hooks to manage these stages more easily. 
+It's like having a remote control for your robot that makes things simpler.
+
+useEffect: This is like a super versatile button on your remote control.
+ You can use it to run code when the component is added, updated, or removed.
+*/
+}
+
+//DAY 15
+//TOPICS COVERED: Third Party Packages
+
+{
+  /* 
+Third-party packages are additional pieces of code or libraries that you can 
+integrate into your React projects to add functionality, improve performance, or simplify complex tasks.
+These packages are created by the open-source community or companies and are available for anyone to use.
+There are more than 1.4M JavaScript packages on npm registry.
+ By now there is a package almost for every kind of problem.
+ We do not have to create the wheel instead we have to know how to use the wheel.
+
+ NPM or Yarn
+You can use either npm or yarn to install packages.
+If you want to use yarn you have install it separately. 
+I would recommend you to stick in one of the package.
+ Don't use both package management tools in one application at the same time.
+
+ Why Use Third-Party Packages?
+Save Time: Instead of writing complex functionality from scratch, you can use pre-built solutions.
+Community Support: Popular packages often have large communities, extensive documentation, and ongoing maintenance.
+Focus on Core Features: Allows you to focus on building unique features rather than reinventing the wheel.
+
+1. node-sass
+Sass is a CSS preprocess which allows to write CSS function, nesting and many more.
+ Let's install node-sass to make use of the power of Sass.
+
+ Why Use node-sass?
+Enhanced Styling: SCSS provides advanced features like variables, nested rules, and mixins.
+Better Organization: Keep your styles modular and easier to manage.
+Improved Productivity: Write more maintainable and scalable CSS.
+
+How to Install node-sass
+1. Install node-sass via npm:
+npm install node-sass --save-dev
+
+2. or with Yarn:
+yarn add node-sass --dev
+
+
+3. Create SCSS Files:
+
+Create your SCSS files with the .scss extension.
+Example: src/styles/App.scss
+Import SCSS in Your React Components:
+
+4 . Import the SCSS file in your React component.
+
+5. Configure Build Tools (Optional):
+
+If you're using Create React App, it already supports node-sass out of the box.
+If you're using a custom setup, ensure your build tools (like Webpack) are configured to handle SCSS files.
+
+$primary-color: #3498db;
+
+.App {
+  text-align: center;
+
+  h1 {
+    color: $primary-color;
+    font-size: 2rem;
+  }
+}
+
+Additional Tips
+Variables: Store reusable values like colors and font sizes.
+Nesting: Organize your styles hierarchically.
+Mixins: Reuse groups of styles across your project.
+By integrating node-sass into your React project, you can harness the power 
+of SCSS to create clean, maintainable, and scalable styles.
+
+2. CSS Modules in React
+CSS Modules allow you to write CSS that's scoped locally by default, 
+which helps avoid global scope conflicts. When you use CSS Modules, 
+each class name and animation is scoped locally to the component, 
+ensuring styles don't leak out and affect other parts of your application.
+
+Benefits of CSS Modules
+Scoped Styles: Each component’s styles are scoped to that component by default.
+No Naming Collisions: Avoid conflicts with class names from other components.
+Maintainability: Keep styles organized and modular.
+
+How to Use CSS Modules in a React Project
+Naming Your CSS File:
+
+Use the .module.css or .module.scss extension for your CSS/SCSS files to enable CSS Modules.
+Creating a CSS Module:
+
+Create a CSS file named App.module.css:
+
+ src/styles/App.module.css 
+.container {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.title {
+  color: #3498db;
+  font-size: 2rem;
+}
+
+3. Importing and Using the CSS Module in a React Component:
+
+// src/App.jsx
+import React from 'react';
+import styles from './styles/App.module.css'; // Importing CSS module
+
+function App() {
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.title}>Hello, world!</h1>
+    </div>
+  );
+}
+
+export default App;
+
+*/
+}
