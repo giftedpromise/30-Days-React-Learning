@@ -1515,3 +1515,14 @@ Wrapper.propTypes = {
 //Prop Types and Children
 //To ensure that children props are used correctly, you can define prop types using the prop-types library.
 //This helps in validating the types of props.children that a component should receive.
+{
+  /*
+Benefits of Using "Children" Props
+Reusability: By using children, components become more reusable and flexible, allowing you to nest different elements and components inside a wrapper.
+Composition: It encourages composition over inheritance, which is a core philosophy in React.
+Flexibility: You can pass any renderable content as children, making your components highly versatile.
+*/
+}
+
+//DAY 14
+//TOPICS COVERED: Component Life Cycles
