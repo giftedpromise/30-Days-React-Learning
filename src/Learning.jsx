@@ -1830,45 +1830,6 @@ Read the documentation for best practices.
 */
 }
 
-//DAY 16
-//TOPICS COVERED: Higher Order Component
-{
-  /* 
-  A Higher Order Component is a function that takes a component as an argument and 
-  returns a new component with some additional functionality or props.
-
-  Key features:
-
-HOCs don't modify the input component
-They compose the original component by wrapping it in a container component
-HOCs are pure functions with no side effects
-
-
-Common use cases:
-
-Code reuse, logic abstraction
-State abstraction and manipulation
-Props manipulation
-Render hijacking
-
-Alternatives:
-With the introduction of Hooks in React, some use cases for HOCs can be replaced with custom hooks,
- which offer a more flexible way to reuse stateful logic.
-
-HOCs are powerful for component logic reuse, but they should be used 
-judiciously to avoid unnecessary complexity.
-
-Best Practices
-Do Not Mutate Original Component: HOCs should not modify the original component.
- They should wrap and enhance it.
-Pass Props Through: Ensure that HOCs pass all props through to the wrapped component,
- unless you intentionally want to omit or alter some props.
-Static Methods: If the original component has static methods, 
-they won't be accessible on the wrapped component by default. You can copy them manually if needed.
-Display Name: Setting a meaningful display name on the HOC helps with debugging
-  */
-}
-
 const withExtraProps = (WrappedComponent) => {
   return class extends React.Component {
     render() {
